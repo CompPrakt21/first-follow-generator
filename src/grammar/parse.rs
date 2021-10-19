@@ -13,10 +13,13 @@ use nom::{character::complete::*, Parser};
 use super::{Grammar, Symbol};
 
 pub fn parse_grammar<'a>(src: &'a str) -> Grammar {
-    let rules = all_consuming(separated_list1(
-        tuple((multispace0, tag(","), multispace0)),
-        parse_rule,
-    ))
+    let rules = all_consuming(
+        tuple((
+            separated_list1(tuple((multispace0, tag(","), multispace0)), parse_rule),
+            multispace0,
+        ))
+        .map(|(res, _)| res),
+    )
     .parse(src);
 
     let rules = rules.unwrap().1.into_iter().collect::<HashMap<_, _>>();

@@ -97,7 +97,7 @@ fn parse_non_terminal<'a>(src: &'a str) -> IResult<&'a str, String> {
 }
 
 fn parse_eps<'a>(src: &'a str) -> IResult<&'a str, Symbol> {
-    tag("​ɛ").map(|_| Symbol::Epsilon).parse(src)
+    tag("ɛ").map(|_| Symbol::Epsilon).parse(src)
 }
 
 fn parse_terminal<'a>(src: &'a str) -> IResult<&'a str, Symbol> {

@@ -8,7 +8,7 @@ Method -> 'public' Type 'IDENT' '(' Parameters? ')' MethodRest? Block,
 MethodRest -> 'throws' 'IDENT',
 Parameters -> Parameter ( ',' Parameters)*,
 Parameter -> Type 'IDENT',
-Type -> Type '[' ']' | BasicType,
+Type -> BasicType ('[' ']')*,
 BasicType -> 'int' | 'boolean' | 'void' | 'IDENT',
 Statement -> Block
            | EmptyStatement

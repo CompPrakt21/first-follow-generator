@@ -8,7 +8,7 @@ Method -> 'Public' Type 'IDENT' 'LeftParen' Parameters? 'RightParen' MethodRest?
 MethodRest -> 'Throws' 'IDENT',
 Parameters -> Parameter ( 'Comma' Parameters)*,
 Parameter -> Type 'IDENT',
-Type -> Type 'LeftSquareBracket' 'RightSquareBracket' | BasicType,
+Type -> BasicType ('LeftSquareBracket' 'RightSquareBracket')*,
 BasicType -> 'Int' | 'Boolean' | 'Void' | 'IDENT',
 Statement -> Block
            | EmptyStatement

@@ -5,7 +5,7 @@ import java.util.Set;
 
 public class Grammar {
 
-	public enum NonTerminals {
+	public enum NonT {
 		AdditiveExpression,
 		Arguments,
 		ArrayAccess,
@@ -49,7 +49,7 @@ public class Grammar {
 
     public static final Map<TokenType, Set<TokenType>> FIRST = Map.ofEntries(
 		
-        Map.entry(NonTerminals.AdditiveExpression, Set.of(TokenType.False,
+        Map.entry(NonT.AdditiveExpression, Set.of(TokenType.False,
 		TokenType.IDENT,
 		TokenType.INTEGER_LITERAL,
 		TokenType.LeftParen,
@@ -61,7 +61,7 @@ public class Grammar {
 		TokenType.True
 	)),
 		
-        Map.entry(NonTerminals.Arguments, Set.of(TokenType.False,
+        Map.entry(NonT.Arguments, Set.of(TokenType.False,
 		TokenType.IDENT,
 		TokenType.INTEGER_LITERAL,
 		TokenType.LeftParen,
@@ -73,10 +73,10 @@ public class Grammar {
 		TokenType.True
 	)),
 		
-        Map.entry(NonTerminals.ArrayAccess, Set.of(TokenType.LeftSquareBracket
+        Map.entry(NonT.ArrayAccess, Set.of(TokenType.LeftSquareBracket
 	)),
 		
-        Map.entry(NonTerminals.AssignmentExpression, Set.of(TokenType.False,
+        Map.entry(NonT.AssignmentExpression, Set.of(TokenType.False,
 		TokenType.IDENT,
 		TokenType.INTEGER_LITERAL,
 		TokenType.LeftParen,
@@ -88,16 +88,16 @@ public class Grammar {
 		TokenType.True
 	)),
 		
-        Map.entry(NonTerminals.BasicType, Set.of(TokenType.Boolean,
+        Map.entry(NonT.BasicType, Set.of(TokenType.Boolean,
 		TokenType.IDENT,
 		TokenType.Int,
 		TokenType.Void
 	)),
 		
-        Map.entry(NonTerminals.Block, Set.of(TokenType.LeftCurlyBracket
+        Map.entry(NonT.Block, Set.of(TokenType.LeftCurlyBracket
 	)),
 		
-        Map.entry(NonTerminals.BlockStatement, Set.of(TokenType.Boolean,
+        Map.entry(NonT.BlockStatement, Set.of(TokenType.Boolean,
 		TokenType.False,
 		TokenType.IDENT,
 		TokenType.INTEGER_LITERAL,
@@ -117,16 +117,16 @@ public class Grammar {
 		TokenType.While
 	)),
 		
-        Map.entry(NonTerminals.ClassDeclaration, Set.of(TokenType.Class
+        Map.entry(NonT.ClassDeclaration, Set.of(TokenType.Class
 	)),
 		
-        Map.entry(NonTerminals.ClassMember, Set.of(TokenType.Public
+        Map.entry(NonT.ClassMember, Set.of(TokenType.Public
 	)),
 		
-        Map.entry(NonTerminals.EmptyStatement, Set.of(TokenType.Semicolon
+        Map.entry(NonT.EmptyStatement, Set.of(TokenType.Semicolon
 	)),
 		
-        Map.entry(NonTerminals.EqualityExpression, Set.of(TokenType.False,
+        Map.entry(NonT.EqualityExpression, Set.of(TokenType.False,
 		TokenType.IDENT,
 		TokenType.INTEGER_LITERAL,
 		TokenType.LeftParen,
@@ -138,7 +138,7 @@ public class Grammar {
 		TokenType.True
 	)),
 		
-        Map.entry(NonTerminals.Expression, Set.of(TokenType.False,
+        Map.entry(NonT.Expression, Set.of(TokenType.False,
 		TokenType.IDENT,
 		TokenType.INTEGER_LITERAL,
 		TokenType.LeftParen,
@@ -150,7 +150,7 @@ public class Grammar {
 		TokenType.True
 	)),
 		
-        Map.entry(NonTerminals.ExpressionStatement, Set.of(TokenType.False,
+        Map.entry(NonT.ExpressionStatement, Set.of(TokenType.False,
 		TokenType.IDENT,
 		TokenType.INTEGER_LITERAL,
 		TokenType.LeftParen,
@@ -162,22 +162,22 @@ public class Grammar {
 		TokenType.True
 	)),
 		
-        Map.entry(NonTerminals.Field, Set.of(TokenType.Public
+        Map.entry(NonT.Field, Set.of(TokenType.Public
 	)),
 		
-        Map.entry(NonTerminals.FieldAccess, Set.of(TokenType.Dot
+        Map.entry(NonT.FieldAccess, Set.of(TokenType.Dot
 	)),
 		
-        Map.entry(NonTerminals.IfStatement, Set.of(TokenType.If
+        Map.entry(NonT.IfStatement, Set.of(TokenType.If
 	)),
 		
-        Map.entry(NonTerminals.LocalVariableDeclarationStatement, Set.of(TokenType.Boolean,
+        Map.entry(NonT.LocalVariableDeclarationStatement, Set.of(TokenType.Boolean,
 		TokenType.IDENT,
 		TokenType.Int,
 		TokenType.Void
 	)),
 		
-        Map.entry(NonTerminals.LogicalAndExpression, Set.of(TokenType.False,
+        Map.entry(NonT.LogicalAndExpression, Set.of(TokenType.False,
 		TokenType.IDENT,
 		TokenType.INTEGER_LITERAL,
 		TokenType.LeftParen,
@@ -189,7 +189,7 @@ public class Grammar {
 		TokenType.True
 	)),
 		
-        Map.entry(NonTerminals.LogicalOrExpression, Set.of(TokenType.False,
+        Map.entry(NonT.LogicalOrExpression, Set.of(TokenType.False,
 		TokenType.IDENT,
 		TokenType.INTEGER_LITERAL,
 		TokenType.LeftParen,
@@ -201,19 +201,19 @@ public class Grammar {
 		TokenType.True
 	)),
 		
-        Map.entry(NonTerminals.MainMethod, Set.of(TokenType.Public
+        Map.entry(NonT.MainMethod, Set.of(TokenType.Public
 	)),
 		
-        Map.entry(NonTerminals.Method, Set.of(TokenType.Public
+        Map.entry(NonT.Method, Set.of(TokenType.Public
 	)),
 		
-        Map.entry(NonTerminals.MethodInvocation, Set.of(TokenType.Dot
+        Map.entry(NonT.MethodInvocation, Set.of(TokenType.Dot
 	)),
 		
-        Map.entry(NonTerminals.MethodRest, Set.of(TokenType.Throws
+        Map.entry(NonT.MethodRest, Set.of(TokenType.Throws
 	)),
 		
-        Map.entry(NonTerminals.MultiplicativeExpression, Set.of(TokenType.False,
+        Map.entry(NonT.MultiplicativeExpression, Set.of(TokenType.False,
 		TokenType.IDENT,
 		TokenType.INTEGER_LITERAL,
 		TokenType.LeftParen,
@@ -225,25 +225,25 @@ public class Grammar {
 		TokenType.True
 	)),
 		
-        Map.entry(NonTerminals.NewArrayExpression, Set.of(TokenType.New
+        Map.entry(NonT.NewArrayExpression, Set.of(TokenType.New
 	)),
 		
-        Map.entry(NonTerminals.NewObjectExpression, Set.of(TokenType.New
+        Map.entry(NonT.NewObjectExpression, Set.of(TokenType.New
 	)),
 		
-        Map.entry(NonTerminals.Parameter, Set.of(TokenType.Boolean,
+        Map.entry(NonT.Parameter, Set.of(TokenType.Boolean,
 		TokenType.IDENT,
 		TokenType.Int,
 		TokenType.Void
 	)),
 		
-        Map.entry(NonTerminals.Parameters, Set.of(TokenType.Boolean,
+        Map.entry(NonT.Parameters, Set.of(TokenType.Boolean,
 		TokenType.IDENT,
 		TokenType.Int,
 		TokenType.Void
 	)),
 		
-        Map.entry(NonTerminals.PostfixExpression, Set.of(TokenType.False,
+        Map.entry(NonT.PostfixExpression, Set.of(TokenType.False,
 		TokenType.IDENT,
 		TokenType.INTEGER_LITERAL,
 		TokenType.LeftParen,
@@ -253,11 +253,11 @@ public class Grammar {
 		TokenType.True
 	)),
 		
-        Map.entry(NonTerminals.PostfixOp, Set.of(TokenType.Dot,
+        Map.entry(NonT.PostfixOp, Set.of(TokenType.Dot,
 		TokenType.LeftSquareBracket
 	)),
 		
-        Map.entry(NonTerminals.PrimaryExpression, Set.of(TokenType.False,
+        Map.entry(NonT.PrimaryExpression, Set.of(TokenType.False,
 		TokenType.IDENT,
 		TokenType.INTEGER_LITERAL,
 		TokenType.LeftParen,
@@ -267,10 +267,10 @@ public class Grammar {
 		TokenType.True
 	)),
 		
-        Map.entry(NonTerminals.Program, Set.of(TokenType.Class
+        Map.entry(NonT.Program, Set.of(TokenType.Class
 	)),
 		
-        Map.entry(NonTerminals.RelationalExpression, Set.of(TokenType.False,
+        Map.entry(NonT.RelationalExpression, Set.of(TokenType.False,
 		TokenType.IDENT,
 		TokenType.INTEGER_LITERAL,
 		TokenType.LeftParen,
@@ -282,14 +282,14 @@ public class Grammar {
 		TokenType.True
 	)),
 		
-        Map.entry(NonTerminals.ReturnStatement, Set.of(TokenType.Return
+        Map.entry(NonT.ReturnStatement, Set.of(TokenType.Return
 	)),
 		
-        Map.entry(NonTerminals.S, Set.of(TokenType.Class,
+        Map.entry(NonT.S, Set.of(TokenType.Class,
 		TokenType.EOF
 	)),
 		
-        Map.entry(NonTerminals.Statement, Set.of(TokenType.False,
+        Map.entry(NonT.Statement, Set.of(TokenType.False,
 		TokenType.IDENT,
 		TokenType.INTEGER_LITERAL,
 		TokenType.If,
@@ -306,13 +306,13 @@ public class Grammar {
 		TokenType.While
 	)),
 		
-        Map.entry(NonTerminals.Type, Set.of(TokenType.Boolean,
+        Map.entry(NonT.Type, Set.of(TokenType.Boolean,
 		TokenType.IDENT,
 		TokenType.Int,
 		TokenType.Void
 	)),
 		
-        Map.entry(NonTerminals.UnaryExpression, Set.of(TokenType.False,
+        Map.entry(NonT.UnaryExpression, Set.of(TokenType.False,
 		TokenType.IDENT,
 		TokenType.INTEGER_LITERAL,
 		TokenType.LeftParen,
@@ -324,13 +324,13 @@ public class Grammar {
 		TokenType.True
 	)),
 		
-        Map.entry(NonTerminals.WhileStatement, Set.of(TokenType.While
+        Map.entry(NonT.WhileStatement, Set.of(TokenType.While
 	))
 		
     );
     public static final Map<TokenType, Set<TokenType>> FOLLOW = Map.ofEntries(
 		
-        Map.entry(NonTerminals.AdditiveExpression, Set.of(TokenType.And,
+        Map.entry(NonT.AdditiveExpression, Set.of(TokenType.And,
 		TokenType.Assign,
 		TokenType.Equals,
 		TokenType.GreaterThan,
@@ -341,10 +341,10 @@ public class Grammar {
 		TokenType.Or
 	)),
 	
-        Map.entry(NonTerminals.Arguments, Set.of(TokenType.RightParen
+        Map.entry(NonT.Arguments, Set.of(TokenType.RightParen
 	)),
 	
-        Map.entry(NonTerminals.ArrayAccess, Set.of(TokenType.Add,
+        Map.entry(NonT.ArrayAccess, Set.of(TokenType.Add,
 		TokenType.And,
 		TokenType.Assign,
 		TokenType.Divide,
@@ -362,17 +362,16 @@ public class Grammar {
 		TokenType.Subtract
 	)),
 	
-        Map.entry(NonTerminals.AssignmentExpression, Set.of(TokenType.Comma,
+        Map.entry(NonT.AssignmentExpression, Set.of(TokenType.Comma,
 		TokenType.RightParen,
 		TokenType.RightSquareBracket,
 		TokenType.Semicolon
 	)),
 	
-        Map.entry(NonTerminals.BasicType, Set.of(TokenType.IDENT,
-		TokenType.LeftSquareBracket
+        Map.entry(NonT.BasicType, Set.of(TokenType.LeftSquareBracket
 	)),
 	
-        Map.entry(NonTerminals.Block, Set.of(TokenType.Boolean,
+        Map.entry(NonT.Block, Set.of(TokenType.Boolean,
 		TokenType.Else,
 		TokenType.False,
 		TokenType.IDENT,
@@ -395,7 +394,7 @@ public class Grammar {
 		TokenType.While
 	)),
 	
-        Map.entry(NonTerminals.BlockStatement, Set.of(TokenType.Boolean,
+        Map.entry(NonT.BlockStatement, Set.of(TokenType.Boolean,
 		TokenType.False,
 		TokenType.IDENT,
 		TokenType.INTEGER_LITERAL,
@@ -416,15 +415,15 @@ public class Grammar {
 		TokenType.While
 	)),
 	
-        Map.entry(NonTerminals.ClassDeclaration, Set.of(TokenType.Class,
+        Map.entry(NonT.ClassDeclaration, Set.of(TokenType.Class,
 		TokenType.EOF
 	)),
 	
-        Map.entry(NonTerminals.ClassMember, Set.of(TokenType.Public,
+        Map.entry(NonT.ClassMember, Set.of(TokenType.Public,
 		TokenType.RightCurlyBracket
 	)),
 	
-        Map.entry(NonTerminals.EmptyStatement, Set.of(TokenType.Boolean,
+        Map.entry(NonT.EmptyStatement, Set.of(TokenType.Boolean,
 		TokenType.Else,
 		TokenType.False,
 		TokenType.IDENT,
@@ -446,18 +445,18 @@ public class Grammar {
 		TokenType.While
 	)),
 	
-        Map.entry(NonTerminals.EqualityExpression, Set.of(TokenType.And,
+        Map.entry(NonT.EqualityExpression, Set.of(TokenType.And,
 		TokenType.Assign,
 		TokenType.Or
 	)),
 	
-        Map.entry(NonTerminals.Expression, Set.of(TokenType.Comma,
+        Map.entry(NonT.Expression, Set.of(TokenType.Comma,
 		TokenType.RightParen,
 		TokenType.RightSquareBracket,
 		TokenType.Semicolon
 	)),
 	
-        Map.entry(NonTerminals.ExpressionStatement, Set.of(TokenType.Boolean,
+        Map.entry(NonT.ExpressionStatement, Set.of(TokenType.Boolean,
 		TokenType.Else,
 		TokenType.False,
 		TokenType.IDENT,
@@ -479,11 +478,11 @@ public class Grammar {
 		TokenType.While
 	)),
 	
-        Map.entry(NonTerminals.Field, Set.of(TokenType.Public,
+        Map.entry(NonT.Field, Set.of(TokenType.Public,
 		TokenType.RightCurlyBracket
 	)),
 	
-        Map.entry(NonTerminals.FieldAccess, Set.of(TokenType.Add,
+        Map.entry(NonT.FieldAccess, Set.of(TokenType.Add,
 		TokenType.And,
 		TokenType.Assign,
 		TokenType.Divide,
@@ -501,7 +500,7 @@ public class Grammar {
 		TokenType.Subtract
 	)),
 	
-        Map.entry(NonTerminals.IfStatement, Set.of(TokenType.Boolean,
+        Map.entry(NonT.IfStatement, Set.of(TokenType.Boolean,
 		TokenType.Else,
 		TokenType.False,
 		TokenType.IDENT,
@@ -523,7 +522,7 @@ public class Grammar {
 		TokenType.While
 	)),
 	
-        Map.entry(NonTerminals.LocalVariableDeclarationStatement, Set.of(TokenType.Boolean,
+        Map.entry(NonT.LocalVariableDeclarationStatement, Set.of(TokenType.Boolean,
 		TokenType.False,
 		TokenType.IDENT,
 		TokenType.INTEGER_LITERAL,
@@ -544,22 +543,22 @@ public class Grammar {
 		TokenType.While
 	)),
 	
-        Map.entry(NonTerminals.LogicalAndExpression, Set.of(TokenType.Assign,
+        Map.entry(NonT.LogicalAndExpression, Set.of(TokenType.Assign,
 		TokenType.Or
 	)),
 	
-        Map.entry(NonTerminals.LogicalOrExpression, Set.of(TokenType.Assign
+        Map.entry(NonT.LogicalOrExpression, Set.of(TokenType.Assign
 	)),
 	
-        Map.entry(NonTerminals.MainMethod, Set.of(TokenType.Public,
+        Map.entry(NonT.MainMethod, Set.of(TokenType.Public,
 		TokenType.RightCurlyBracket
 	)),
 	
-        Map.entry(NonTerminals.Method, Set.of(TokenType.Public,
+        Map.entry(NonT.Method, Set.of(TokenType.Public,
 		TokenType.RightCurlyBracket
 	)),
 	
-        Map.entry(NonTerminals.MethodInvocation, Set.of(TokenType.Add,
+        Map.entry(NonT.MethodInvocation, Set.of(TokenType.Add,
 		TokenType.And,
 		TokenType.Assign,
 		TokenType.Divide,
@@ -577,10 +576,10 @@ public class Grammar {
 		TokenType.Subtract
 	)),
 	
-        Map.entry(NonTerminals.MethodRest, Set.of(TokenType.LeftCurlyBracket
+        Map.entry(NonT.MethodRest, Set.of(TokenType.LeftCurlyBracket
 	)),
 	
-        Map.entry(NonTerminals.MultiplicativeExpression, Set.of(TokenType.Add,
+        Map.entry(NonT.MultiplicativeExpression, Set.of(TokenType.Add,
 		TokenType.And,
 		TokenType.Assign,
 		TokenType.Equals,
@@ -593,22 +592,22 @@ public class Grammar {
 		TokenType.Subtract
 	)),
 	
-        Map.entry(NonTerminals.NewArrayExpression, Set.of(TokenType.Dot,
+        Map.entry(NonT.NewArrayExpression, Set.of(TokenType.Dot,
 		TokenType.LeftSquareBracket
 	)),
 	
-        Map.entry(NonTerminals.NewObjectExpression, Set.of(TokenType.Dot,
+        Map.entry(NonT.NewObjectExpression, Set.of(TokenType.Dot,
 		TokenType.LeftSquareBracket
 	)),
 	
-        Map.entry(NonTerminals.Parameter, Set.of(TokenType.Comma
+        Map.entry(NonT.Parameter, Set.of(TokenType.Comma
 	)),
 	
-        Map.entry(NonTerminals.Parameters, Set.of(TokenType.Comma,
+        Map.entry(NonT.Parameters, Set.of(TokenType.Comma,
 		TokenType.RightParen
 	)),
 	
-        Map.entry(NonTerminals.PostfixExpression, Set.of(TokenType.Add,
+        Map.entry(NonT.PostfixExpression, Set.of(TokenType.Add,
 		TokenType.And,
 		TokenType.Assign,
 		TokenType.Divide,
@@ -624,7 +623,7 @@ public class Grammar {
 		TokenType.Subtract
 	)),
 	
-        Map.entry(NonTerminals.PostfixOp, Set.of(TokenType.Add,
+        Map.entry(NonT.PostfixOp, Set.of(TokenType.Add,
 		TokenType.And,
 		TokenType.Assign,
 		TokenType.Divide,
@@ -642,21 +641,21 @@ public class Grammar {
 		TokenType.Subtract
 	)),
 	
-        Map.entry(NonTerminals.PrimaryExpression, Set.of(TokenType.Dot,
+        Map.entry(NonT.PrimaryExpression, Set.of(TokenType.Dot,
 		TokenType.LeftSquareBracket
 	)),
 	
-        Map.entry(NonTerminals.Program, Set.of(TokenType.EOF
+        Map.entry(NonT.Program, Set.of(TokenType.EOF
 	)),
 	
-        Map.entry(NonTerminals.RelationalExpression, Set.of(TokenType.And,
+        Map.entry(NonT.RelationalExpression, Set.of(TokenType.And,
 		TokenType.Assign,
 		TokenType.Equals,
 		TokenType.NotEquals,
 		TokenType.Or
 	)),
 	
-        Map.entry(NonTerminals.ReturnStatement, Set.of(TokenType.Boolean,
+        Map.entry(NonT.ReturnStatement, Set.of(TokenType.Boolean,
 		TokenType.Else,
 		TokenType.False,
 		TokenType.IDENT,
@@ -678,10 +677,10 @@ public class Grammar {
 		TokenType.While
 	)),
 	
-        Map.entry(NonTerminals.S, Set.of(
+        Map.entry(NonT.S, Set.of(
 	)),
 	
-        Map.entry(NonTerminals.Statement, Set.of(TokenType.Boolean,
+        Map.entry(NonT.Statement, Set.of(TokenType.Boolean,
 		TokenType.Else,
 		TokenType.False,
 		TokenType.IDENT,
@@ -703,11 +702,10 @@ public class Grammar {
 		TokenType.While
 	)),
 	
-        Map.entry(NonTerminals.Type, Set.of(TokenType.IDENT,
-		TokenType.LeftSquareBracket
+        Map.entry(NonT.Type, Set.of(TokenType.IDENT
 	)),
 	
-        Map.entry(NonTerminals.UnaryExpression, Set.of(TokenType.Add,
+        Map.entry(NonT.UnaryExpression, Set.of(TokenType.Add,
 		TokenType.And,
 		TokenType.Assign,
 		TokenType.Divide,
@@ -723,7 +721,7 @@ public class Grammar {
 		TokenType.Subtract
 	)),
 	
-        Map.entry(NonTerminals.WhileStatement, Set.of(TokenType.Boolean,
+        Map.entry(NonT.WhileStatement, Set.of(TokenType.Boolean,
 		TokenType.Else,
 		TokenType.False,
 		TokenType.IDENT,

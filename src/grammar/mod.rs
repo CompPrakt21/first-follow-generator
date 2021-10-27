@@ -292,6 +292,14 @@ impl Grammar {
                     }
                 }
 
+                for child_sym in seq.iter().rev() {
+                    changed |= sym_follow_is_follow_of_sym(sym, child_sym, cur_follow_sets);
+
+                    if !self.can_produce_eps(child_sym) {
+                        break;
+                    }
+                }
+
                 let last_sym = seq.last().unwrap();
 
                 changed |= sym_follow_is_follow_of_sym(sym, last_sym, cur_follow_sets);

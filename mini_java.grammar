@@ -1,15 +1,15 @@
 S -> Program 'EOF',
 Program -> ClassDeclaration*,
-ClassDeclaration -> 'Class' 'IDENT' 'LeftCurlyBracket' ClassMember* 'RightCurlyBracket',
+ClassDeclaration -> 'Class' 'Identifier' 'LeftCurlyBracket' ClassMember* 'RightCurlyBracket',
 ClassMember -> Field | Method | MainMethod,
-Field -> 'Public' Type 'IDENT' 'Semicolon',
-MainMethod -> 'Public' 'Static' 'Void' 'IDENT' 'LeftParen' Type 'IDENT' 'RightParen' MethodRest? Block,
-Method -> 'Public' Type 'IDENT' 'LeftParen' Parameters? 'RightParen' MethodRest? Block,
-MethodRest -> 'Throws' 'IDENT',
+Field -> 'Public' Type 'Identifier' 'Semicolon',
+MainMethod -> 'Public' 'Static' 'Void' 'Identifier' 'LeftParen' Type 'Identifier' 'RightParen' MethodRest? Block,
+Method -> 'Public' Type 'Identifier' 'LeftParen' Parameters? 'RightParen' MethodRest? Block,
+MethodRest -> 'Throws' 'Identifier',
 Parameters -> Parameter ( 'Comma' Parameters)*,
-Parameter -> Type 'IDENT',
+Parameter -> Type 'Identifier',
 Type -> BasicType ('LeftSquareBracket' 'RightSquareBracket')*,
-BasicType -> 'Int' | 'Boolean' | 'Void' | 'IDENT',
+BasicType -> 'Int' | 'Boolean' | 'Void' | 'Identifier',
 Statement -> Block
            | EmptyStatement
            | IfStatement
@@ -19,7 +19,7 @@ Statement -> Block
 
 Block -> 'LeftCurlyBracket' BlockStatement* 'RightCurlyBracket',
 BlockStatement -> Statement | LocalVariableDeclarationStatement,
-LocalVariableDeclarationStatement -> Type 'IDENT' ( 'Assign' Expression )? 'Semicolon',
+LocalVariableDeclarationStatement -> Type 'Identifier' ( 'Assign' Expression )? 'Semicolon',
 EmptyStatement -> 'Semicolon',
 WhileStatement -> 'While' 'LeftParen' Expression 'RightParen' Statement,
 IfStatement -> 'If' 'LeftParen' Expression 'RightParen' Statement ( 'Else' Statement )?,
@@ -39,12 +39,12 @@ PostfixOp -> MethodInvocation
            | FieldAccess
            | ArrayAccess,
 
-MethodInvocation -> 'Dot' 'IDENT' 'LeftParen' Arguments 'RightParen',
-FieldAccess -> 'Dot' 'IDENT',
+MethodInvocation -> 'Dot' 'Identifier' 'LeftParen' Arguments 'RightParen',
+FieldAccess -> 'Dot' 'Identifier',
 ArrayAccess -> 'LeftSquareBracket' Expression 'RightSquareBracket',
 Arguments -> (Expression ('Comma' Expression)*)?,
-PrimaryExpression -> 'Null' | 'False' | 'True' | 'INTEGER_LITERAL' | 'IDENT' | 'IDENT' 'LeftParen' Arguments 'RightParen' | 'This'
+PrimaryExpression -> 'Null' | 'False' | 'True' | 'IntLiteral' | 'Identifier' | 'Identifier' 'LeftParen' Arguments 'RightParen' | 'This'
                     | 'LeftParen' Expression 'RightParen' | NewObjectExpression | NewArrayExpression,
 
-NewObjectExpression -> 'New' 'IDENT' 'LeftParen' 'RightParen',
+NewObjectExpression -> 'New' 'Identifier' 'LeftParen' 'RightParen',
 NewArrayExpression -> 'New' BasicType 'LeftSquareBracket' Expression 'RightSquareBracket' ( 'LeftSquareBracket' 'RightSquareBracket')*
